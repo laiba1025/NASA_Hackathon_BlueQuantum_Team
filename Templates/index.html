@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"> <!-- Link to the external CSS file -->
+    <title>NASA School Quiz Portal</title>
+    <style>
+        /* Set the background color for the entire page */
+        body {
+            background-color: #05121f; /* Dark space background */
+            font-family: Arial, sans-serif;
+            color: #FFFFFF; /* White text color for better visibility */
+            text-align: center; /* Center the content */
+            padding-top: 50px; /* Add some space from the top */
+        }
+
+        /* Style for the NASA heading */
+        h1.nasa {
+            font-family: 'Arial Black', sans-serif; /* Bold font family */
+            font-size: 60px; /* Large font size */
+            color: #FF0000; /* NASA Red */
+            text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.7); /* Enhanced shadow for depth */
+            margin-bottom: 20px; /* Space below the heading */
+        }
+
+        /* Add a slight shadow to text for better visibility */
+        h2, p, ul, label {
+            text-shadow: 2px 2px 5px rgba(92, 90, 90, 0.7);
+        }
+
+        /* Style headings */
+        h2 {
+            margin-top: 30px; /* Space above the subheading */
+            margin-bottom: 15px; /* Space below the subheading */
+            color: #FFFFFF; /* White text */
+        }
+
+        /* Style paragraphs */
+        p {
+            margin: 0 0 20px 0; /* Bottom margin for spacing */
+            line-height: 1.6; /* Increase line height for better readability */
+            color: #FFFFFF; /* White text */
+        }
+
+        /* Style the dropdown menu */
+        select {
+            padding: 10px;
+            font-size: 16px;
+            margin-top: 20px;
+            border-radius: 5px; /* Rounded corners */
+            border: 2px solid rgba(0, 0, 0, 0.5); /* Light border */
+            background-color: rgb(122, 112, 112); /* Grey background for select */
+            color: #FFFFFF; /* White text color */
+        }
+
+        /* Style the form label */
+        label {
+            font-size: 18px;
+            display: block; /* Make label block-level for proper spacing */
+            margin-bottom: 10px; /* Space below label */
+            color: #FFFFFF; /* White text */
+        }
+
+        /* Add a simple box for content clarity */
+        form {
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            margin-top: 20px; /* Space above the form */
+        }
+
+        /* Button styles */
+        button {
+            background-color: #007bff; /* Bootstrap primary color */
+            color: #FFFFFF; /* White text */
+            border: none; /* Remove border */
+            padding: 10px 20px; /* Padding around the button */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Change cursor to pointer */
+            font-size: 16px; /* Font size */
+            margin-top: 10px; /* Space above the button */
+            transition: background-color 0.3s; /* Smooth transition */
+        }
+
+        /* Button hover effect */
+        button:hover {
+            background-color: #98a9bd; /* Darker blue on hover */
+        }
+
+        /* Style for the error message (if needed) */
+        .error {
+            color: red; /* Red color for error messages */
+            margin-top: 10px; /* Add margin above */
+        }
+
+        /* Background effect for the school levels paragraph */
+        .school-levels {
+            background: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+            padding: 20px; /* Add padding */
+            border-radius: 10px; /* Rounded corners */
+            display: inline-block; /* Center the background */
+            margin-top: 20px; /* Space above the paragraph */
+            max-width: 600px; /* Set max width for the background */
+            line-height: 1.8; /* Line height for better readability */
+            text-align: left; /* Align text to the left */
+        }
+
+        /* Style for individual school level descriptions */
+        .level {
+            margin-bottom: 15px; /* Space below each level description */
+        }
+    </style>
+</head>
+<body>
+    <h1 class="nasa">NASA</h1> <!-- NASA heading -->
+    <h1>Welcome to the School Quiz Portal</h1>
+
+    <p>
+        This interactive quiz platform is designed for students of various school levels:
+    </p>
+
+    <!-- Combined paragraph with background effect -->
+    <div class="school-levels">
+        <div class="level">
+            <strong>Elementary School Students (Ages 8-12):</strong> Explore fun and engaging questions about science, space, and more, suited to your level!
+        </div>
+        <div class="level">
+            <strong>Middle School Students (Ages 13-18):</strong> Test your knowledge with intermediate-level quizzes and expand your understanding of a wide range of topics.
+        </div>
+        <div class="level">
+            <strong>High School Students:</strong> Challenge yourself with advanced questions that will help deepen your academic skills and curiosity.
+        </div>
+    </div>
+
+    <h2>Select Your School Level</h2>
+
+    <!-- Dropdown menu for school level selection -->
+    <form id="quizForm">
+        <label for="schoolLevel">Choose your school level:</label>
+        <select id="schoolLevel" name="schoolLevel">
+            <option value="">-- Select School Level --</option>
+            <option value="elementary">Elementary School</option>
+            <option value="secondary">Middle School</option>
+            <option value="highSchool">High School</option>
+        </select>
+        <button type="button" onclick="navigateToQuiz()">Start Quiz</button> <!-- Start Quiz Button -->
+    </form>
+
+    <script>
+        function navigateToQuiz() {
+            const level = document.getElementById('schoolLevel').value;
+            if (level) {
+                window.location.href = `/quiz/${level}`; // Redirects to the quiz page based on selected level
+            } else {
+                alert("Please select a school level."); // Alerts user to select a level
+            }
+        }
+    </script>
+</body>
+</html>

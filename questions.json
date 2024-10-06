@@ -1,0 +1,260 @@
+{
+    "elementary": [
+        {
+            "question": "What is an exoplanet?",
+            "options": [
+                "A planet outside our solar system",
+                "A star near Earth",
+                "A moon in our solar system",
+                "A type of spaceship"
+            ],
+            "correct": 0,
+            "explanation": "An exoplanet is a planet that orbits a star outside our solar system. Astronomers have discovered thousands of them, and some may even have the right conditions for life!",
+            "funFact": "The first exoplanet was discovered in 1992."
+        },
+        {
+            "question": "How do scientists find exoplanets?",
+            "options": [
+                "By sending spaceships",
+                "By listening to the stars",
+                "By watching stars dim when a planet passes in front",
+                "By using microscopes"
+            ],
+            "correct": 2,
+            "explanation": "Scientists use telescopes to look for tiny dips in a star’s brightness when an exoplanet moves in front of it, like a shadow!",
+            "funFact": "This method is called the 'transit method,' and it's one of the most successful ways to find exoplanets!"
+        },
+        {
+            "question": "What is a star?",
+            "options": [
+                "A glowing ball of gas",
+                "A huge space rock",
+                "A cold, dark object",
+                "A space animal"
+            ],
+            "correct": 0,
+            "explanation": "Stars are giant, glowing balls of gas, mostly made of hydrogen and helium. Our Sun is a star!",
+            "funFact": "Stars can live for billions of years. The Sun is about 4.6 billion years old!"
+        },
+        {
+            "question": "Which of these planets is NOT in our solar system?",
+            "options": [
+                "Earth",
+                "Mars",
+                "Kepler-452b",
+                "Jupiter"
+            ],
+            "correct": 2,
+            "explanation": "Kepler-452b is an exoplanet that orbits a star similar to our Sun, but it's not in our solar system.",
+            "funFact": "Kepler-452b is often called 'Earth's cousin' because it might have similar conditions to our planet!"
+        },
+        {
+            "question": "How many planets are there in our solar system?",
+            "options": [
+                "5",
+                "8",
+                "9",
+                "12"
+            ],
+            "correct": 1,
+            "explanation": "There are 8 planets in our solar system: Mercury, Venus, Earth, Mars, Jupiter, Saturn, Uranus, and Neptune.",
+            "funFact": "Pluto used to be the 9th planet, but in 2006 it was reclassified as a 'dwarf planet.'"
+        },
+        {
+            "question": "What do exoplanets orbit around?",
+            "options": [
+                "Stars",
+                "Moons",
+                "Spaceships",
+                "Comets"
+            ],
+            "correct": 0,
+            "explanation": "Exoplanets orbit around stars just like the planets in our solar system orbit the Sun.",
+            "funFact": "Some exoplanets even orbit two stars at once, like the double suns in the movie Star Wars!"
+        },
+        {
+            "question": "What do scientists use to study exoplanets?",
+            "options": [
+                "Submarines",
+                "Telescopes",
+                "Rockets",
+                "Magnifying glasses"
+            ],
+            "correct": 1,
+            "explanation": "Scientists use powerful telescopes to study exoplanets, including space telescopes like the James Webb Space Telescope.",
+            "funFact": "Telescopes can see very far into space, letting scientists find planets that are light-years away!"
+        }
+    ],
+    "secondary": [
+        {
+            "question": "What is the 'transit method' in exoplanet discovery?",
+            "options": [
+                "Sending a probe to a planet",
+                "Looking for changes in a star’s brightness",
+                "Measuring a planet’s temperature",
+                "Listening to radio signals from space"
+            ],
+            "correct": 1,
+            "explanation": "The transit method involves observing the dip in a star's brightness when an exoplanet passes in front of it.",
+            "funFact": "This method has helped scientists discover more than 2,000 exoplanets!"
+        },
+        {
+            "question": "What makes an exoplanet potentially habitable?",
+            "options": [
+                "Its size",
+                "Its distance from Earth",
+                "Being in the 'Goldilocks Zone'",
+                "Having moons"
+            ],
+            "correct": 2,
+            "explanation": "The 'Goldilocks Zone' is the area around a star where a planet might have liquid water, making it a potential place for life.",
+            "funFact": "Earth is in the Goldilocks Zone of our Sun, which is why life can exist here!"
+        },
+        {
+            "question": "Which space telescope discovered the most exoplanets?",
+            "options": [
+                "Hubble Space Telescope",
+                "James Webb Space Telescope",
+                "Kepler Space Telescope",
+                "Spitzer Space Telescope"
+            ],
+            "correct": 2,
+            "explanation": "The Kepler Space Telescope discovered over 2,600 exoplanets before it retired in 2018.",
+            "funFact": "Kepler’s discoveries have changed the way scientists think about planets and solar systems!"
+        },
+        {
+            "question": "What is a 'super-Earth'?",
+            "options": [
+                "A planet made of gas",
+                "A planet smaller than Earth",
+                "A planet bigger than Earth but smaller than gas giants",
+                "A planet made entirely of water"
+            ],
+            "correct": 2,
+            "explanation": "Super-Earths are rocky planets larger than Earth but smaller than gas giants like Jupiter.",
+            "funFact": "Super-Earths may have the right conditions to support life!"
+        },
+        {
+            "question": "How does the 'radial velocity' method help discover exoplanets?",
+            "options": [
+                "By measuring changes in a star’s position due to the pull of a planet",
+                "By directly imaging planets",
+                "By detecting radio signals from planets",
+                "By measuring the planet’s temperature"
+            ],
+            "correct": 0,
+            "explanation": "The radial velocity method detects the slight wobble of a star caused by the gravitational pull of an orbiting planet.",
+            "funFact": "This method helped discover the first-ever exoplanet in 1995!"
+        },
+        {
+            "question": "What is the closest exoplanet to Earth?",
+            "options": [
+                "Proxima Centauri b",
+                "Kepler-22b",
+                "Jupiter",
+                "Mars"
+            ],
+            "correct": 0,
+            "explanation": "Proxima Centauri b is just 4.2 light-years away from Earth, orbiting our nearest star neighbor, Proxima Centauri.",
+            "funFact": "If we could travel at the speed of light, it would still take over 4 years to reach Proxima Centauri b!"
+        },
+        {
+            "question": "What type of exoplanet is most commonly found?",
+            "options": [
+                "Ice giants",
+                "Rocky planets",
+                "Gas giants",
+                "Water worlds"
+            ],
+            "correct": 2,
+            "explanation": "Gas giants like Jupiter and Saturn are the most commonly discovered exoplanets because their large size makes them easier to detect.",
+            "funFact": "Some gas giants orbit very close to their stars and are called Hot Jupiters because they are extremely hot!"
+        }
+    ],
+    "highSchool": [
+        {
+            "question": "What is the 'direct imaging' method in exoplanet discovery?",
+            "options": [
+                "Using cameras on the Moon",
+                "Capturing images by blocking out the star’s light",
+                "Measuring gravitational waves",
+                "Detecting water on a planet"
+            ],
+            "correct": 1,
+            "explanation": "Direct imaging is a method where scientists block a star’s light to see planets.",
+            "funFact": "Direct imaging is difficult but allows scientists to actually see exoplanets, not just detect them!"
+        },
+        {
+            "question": "What was the first exoplanet discovered around a Sun-like star?",
+            "options": [
+                "Kepler-452b",
+                "51 Pegasi b",
+                "Proxima Centauri b",
+                "Gliese 581g"
+            ],
+            "correct": 1,
+            "explanation": "In 1995, 51 Pegasi b was the first exoplanet discovered around a star similar to our Sun.",
+            "funFact": "51 Pegasi b is a gas giant and orbits its star very closely, completing a full orbit in just four days!"
+        },
+        {
+            "question": "What is the significance of the 'habitable zone'?",
+            "options": [
+                "It's where the most stars are found",
+                "It's the region around a star where water can exist in liquid form",
+                "It's the farthest area a telescope can reach",
+                "It's a zone with the most radiation"
+            ],
+            "correct": 1,
+            "explanation": "The habitable zone, also known as the Goldilocks zone, is where conditions are just right for life, especially because water can remain liquid.",
+            "funFact": "Even within the habitable zone, life is not guaranteed — the planet also needs other favorable conditions!"
+        },
+        {
+            "question": "How does the 'gravitational microlensing' method help discover exoplanets?",
+            "options": [
+                "By observing the bending of light caused by a star’s gravity",
+                "By directly capturing images of planets",
+                "By measuring the sound waves from space",
+                "By detecting changes in a star’s temperature"
+            ],
+            "correct": 0,
+            "explanation": "Gravitational microlensing occurs when a massive object, like a star, bends and magnifies the light from a more distant object, revealing the presence of an exoplanet.",
+            "funFact": "This method can help scientists find planets that are far away from their stars, even beyond the habitable zone!"
+        },
+        {
+            "question": "What is a 'hot Jupiter'?",
+            "options": [
+                "A planet that is closer to the Sun than Mercury",
+                "A gas giant that orbits very close to its star",
+                "A rocky planet similar to Earth",
+                "A small planet covered in volcanoes"
+            ],
+            "correct": 1,
+            "explanation": "Hot Jupiters are gas giants that orbit very close to their stars, which makes them extremely hot.",
+            "funFact": "Some hot Jupiters have temperatures over 1,000 degrees Celsius — that’s hotter than some stars!"
+        },
+        {
+            "question": "What does 'spectroscopy' help scientists find on exoplanets?",
+            "options": [
+                "The planet’s size",
+                "The composition of the planet’s atmosphere",
+                "The number of moons a planet has",
+                "The speed of the planet’s rotation"
+            ],
+            "correct": 1,
+            "explanation": "Spectroscopy measures the light from a planet to identify the elements in its atmosphere, such as oxygen, carbon dioxide, or methane.",
+            "funFact": "Scientists hope to use spectroscopy to find signs of life by detecting molecules like oxygen or methane, which could indicate biological activity!"
+        },
+        {
+            "question": "Which exoplanet is considered potentially habitable due to its size and location in the habitable zone?",
+            "options": [
+                "Kepler-452b",
+                "Neptune",
+                "Gliese 1214b",
+                "Mars"
+            ],
+            "correct": 0,
+            "explanation": "Kepler-452b is often considered one of the most Earth-like exoplanets because it is in the habitable zone and may have liquid water.",
+            "funFact": "Kepler-452b is 60% larger than Earth, but it could have similar temperatures and conditions for life!"
+        }
+    ]
+}

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quiz Page</title>
+    <style>
+        /* Set background image and color for the body */
+        body {
+            background-color: #05121f; /* Dark space background */
+            font-family: Arial, sans-serif;
+            color: #FFFFFF; /* White text color for better visibility */
+            text-align: center; /* Center the content */
+            padding-top: 50px; /* Add some space from the top */
+        }
+
+        /* Style for the quiz heading */
+        #quizHeading {
+            color: #FF0000; /* NASA Red */
+            text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.7);
+            font-size: 48px; /* Large font size */
+            margin-bottom: 30px; /* Space below the heading */
+            font-family: 'Arial Black', sans-serif; /* Bold font */
+        }
+
+        /* Add a slight shadow to text for better visibility */
+        h1, h2, p, label {
+            text-shadow: 2px 2px 5px rgba(131, 125, 125, 0.7);
+        }
+
+        /* Style the form and result container for better readability */
+        form, #resultContainer {
+            background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black background */
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            width: 80%;
+            max-width: 600px;
+            margin: auto;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Center content and set width */
+        #questionsContainer, #resultDetails {
+            margin: 20px 0;
+        }
+
+        /* Style each question section */
+        .question-section {
+            margin-bottom: 20px; /* Space between questions */
+            padding: 10px;
+            border: 1px solid white; /* Border around each question */
+            border-radius: 5px; /* Rounded corners */
+            background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white background for questions */
+        }
+
+        /* Style for each result section */
+        .result-section {
+            margin-bottom: 20px; /* Space between result sections */
+            padding: 10px;
+            border-radius: 5px; /* Rounded corners for result sections */
+        }
+
+        /* Correct and incorrect answer styles */
+        .correct {
+            border: 1px solid green; /* Green border for correct answers */
+            background-color: rgba(0, 128, 0, 0.1); /* Light green background */
+        }
+
+        .incorrect {
+            border: 1px solid red; /* Red border for incorrect answers */
+            background-color: rgba(255, 0, 0, 0.1); /* Light red background */
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #008CBA;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px; /* Margin for spacing */
+        }
+
+        button:hover {
+            background-color: #005f73;
+        }
+
+        #scoreContainer {
+            margin-top: 20px;
+        }
+
+        /* Styles for the options */
+        .option-container {
+            display: flex; /* Use flexbox for alignment */
+            align-items: center; /* Center vertically */
+            margin: 5px 0; /* Add some vertical space between options */
+        }
+
+        .option-container input {
+            margin-right: 10px; /* Space between the radio button and label */
+        }
+
+        .option-container label {
+            margin: 0; /* Remove margin from label */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Add a page heading -->
+    <h1 id="quizHeading">QUIZ</h1>
+
+    <form id="quizForm">
+        <div id="questionsContainer"></div>
+        <button type="submit">Submit Quiz</button>
+    </form>
+
+    <!-- Add a section to display results -->
+    <div id="resultContainer" style="display: none;">
+        <h2>Your Quiz Results</h2>
+
+        <!-- Add a section to display the score at the top -->
+        <div id="scoreContainer">
+            <h3>Your Score: <span id="score"></span></h3>
+        </div>
+
+        <!-- Detailed results will go here -->
+        <div id="resultDetails"></div>
+    </div>
+
+    <script>
+        // Ensure that questions data is properly passed to JavaScript
+        const quizQuestions = JSON.parse(`{{ questions | tojson | safe }}`);
+
+        const quizContainer = document.getElementById('questionsContainer');
+
+        // Render the questions dynamically
+        quizQuestions.forEach((q, index) => {
+            let questionDiv = document.createElement('div');
+            questionDiv.className = 'question-section'; // Add class for styling
+            questionDiv.innerHTML = `<p><strong>Question ${index + 1}:</strong> ${q.question}</p>`;
+            
+            // Create a container for the options
+            q.options.forEach((opt, optIndex) => {
+                let optionDiv = document.createElement('div');
+                optionDiv.className = 'option-container'; // Add class for styling
+                optionDiv.innerHTML = `
+                    <input type="radio" name="q${index}" value="${optIndex}">
+                    <label>${opt}</label>
+                `;
+                questionDiv.appendChild(optionDiv); // Append each option to the question
+            });
+            quizContainer.appendChild(questionDiv);
+        });
+
+        // Submit form and process the result
+        document.getElementById('quizForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let selectedAnswers = [];
+            let allSelected = true; // Flag to check if all questions are answered
+
+            quizQuestions.forEach((q, index) => {
+                let selected = document.querySelector(`input[name="q${index}"]:checked`);
+                if (!selected) {
+                    allSelected = false; // Set flag to false if any question is unanswered
+                }
+                selectedAnswers.push({
+                    question: q.question,
+                    options: q.options,
+                    selected: selected ? parseInt(selected.value) : null
+                });
+            });
+
+            if (!allSelected) {
+                alert("Please answer all questions before submitting."); // Alert if any question is unanswered
+                return; // Prevent form submission
+            }
+
+            fetch('/result', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    level: "{{ level }}",
+                    questions: selectedAnswers
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Hide the quiz heading
+                document.getElementById('quizHeading').style.display = 'none';
+
+                // Hide the quiz form and show the results
+                document.getElementById('quizForm').style.display = 'none';
+                document.getElementById('resultContainer').style.display = 'block';
+
+                let resultDetails = document.getElementById('resultDetails');
+                let score = 0;
+
+                // Process and display each question result
+                data.forEach((result, index) => {
+                    let resultDiv = document.createElement('div');
+                    resultDiv.className = 'result-section'; // Add class for styling
+
+                    // Determine if the answer is correct or incorrect
+                    if (result.selected !== null && result.options[result.selected] === result.correct) {
+                        resultDiv.classList.add('correct'); // Mark as correct
+                    } else {
+                        resultDiv.classList.add('incorrect'); // Mark as incorrect
+                    }
+
+                    resultDiv.innerHTML = `
+                        <h3>Question ${index + 1}: ${result.question}</h3>
+                        <p><strong>Your Answer:</strong> ${result.selected !== null ? result.options[result.selected] : "No answer selected"}</p>
+                        <p><strong>Correct Answer:</strong> ${result.correct}</p>
+                        <p><strong>Explanation:</strong> ${result.explanation}</p>
+                        <p><strong>Fun Fact:</strong> ${result.funFact}</p>
+                    `;
+
+                    // Increment the score if the answer is correct
+                    if (result.selected !== null && result.options[result.selected] === result.correct) {
+                        score++;
+                    }
+                    resultDetails.appendChild(resultDiv);
+                });
+
+                // Display the score at the top
+                document.getElementById('score').textContent = `${score} / ${data.length}`;
+            });
+        });
+    </script>
+</body>
+</html>
